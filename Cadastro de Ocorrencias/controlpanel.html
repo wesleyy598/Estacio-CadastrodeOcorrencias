@@ -1,0 +1,155 @@
+<DOCTYPE! html>
+<html lang="pt" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistema de Chamados ESTACIO</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+        <script type="text/javascript">
+        window.onload = function() {
+			dado = "tab-all";
+			mudaPag(dado);
+		};
+        </script>
+     </head>
+     <header>
+
+     </header>
+<body class="body">
+    <div class="body-allign">
+    <div class="body-container">
+        <div class="body-header">
+                <img class="logo" src="images/logo.png">
+                <div class="calendar-info">
+                    <img class="calendar" src="images/calendar.png">
+                    <div class="sistem-date">
+                        <h3>Hoje</h3>
+                        <h2>21 JUN 2021</h2>
+                    </div>
+                </div>
+                <a href="#myModal" role="button" class="add-button" data-toggle="modal">+ Adicionar</a>
+                <div>
+                    <img class="sinner" src="images/sinner.png" alt="images/sinner-tik.png">
+                    <img class="gear" src="images/gear.png">
+                </div>
+        </div>
+
+        <div class="table-dimension">
+            <div class="tabs">
+                <button class="tab1" name="tab1" ID="tab1" value="tab-all" autofocus=1 onclick="mudaPag(this)"><div class="text-tab">03 <h4 id="tab-small">Todos</h4></div></button>
+                <button class="tab2" name="tab2" ID="tab2" value="tab-done" onclick="mudaPag(this)"><div class="text-tab">02 <h4 id="tab-small">Concluidos</h4></div></button>
+                <button class="tab3" name="tab3" ID="tab3" value="tab-wait"  onclick="mudaPag(this)"><div class="text-tab">01 <h4 id="tab-small">Em espera</h4></div></button>
+            </div>
+            <iframe class="iframe" src="" name="iframes" ID="frame" width="900" height="650"></iframe>
+        </div>
+    </div> 
+    </div>
+
+    <!--MODAL-->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog2">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="myModalLabel">Cadastro de Ocorrência</h1>
+                </div>
+                <div class="modal-body">
+                
+                <!--FORMULARIO-->
+                <form name="form-ocorrencia" id="form" class="form-ocorrencia" action="#">
+                    <br>
+                    <div class="form-row">
+                    <div class="form-label-container">
+                        <h3 id="form-labels">
+                            <div class="label-div">
+                                Setor da Próxima Etapa:
+                            </div>
+                            <div class="label-div">
+                                Setor para Redirecionamento:
+                            </div>
+                            <div class="label-div">
+                                Campus Responsável:
+                            </div>
+                            <div class="label-div">
+                                Matrícula:
+                            </div>
+                            <div class="label-div">
+                                Nome:
+                            </div>
+                            <div class="label-div">
+                                Tipo de Ocorrência:
+                            </div>
+                            <div class="label-div">
+                                Status:
+                            </div>
+                            <div class="label-div">
+                                Observação:
+                            </div>
+                            <div class="label-div" id="file-upload">
+                                Anexar Arquivo:
+                            </div>
+                        </h3>
+                    </div>
+                    <div class="form-content-container">
+                     <select name="setor-prox-etapa" ID="setor-prox-etapa" required>
+                        <option value=""></option>
+                        <option value="coordenacao">Coordenação</option>
+                        <option value="financeiro">Finançeiro</option>
+                        <option value="ead">Polo EAD</option>
+                    </select>
+                    <select name="setor-redirec" ID="setor-redirec">
+                        <option value=""></option>
+                        <option value="coordenacao">Coordenação</option>
+                        <option value="financeiro">Finançeiro</option>
+                        <option value="ead">Polo EAD</option>
+                    </select>
+                    <select name="campus-resp" ID="campus-resp" required>
+                        <option value=""></option>
+                        <option value="fratelli-vita">Fratelli Vita</option>
+                        <option value="gilberto-gil">Gilberto Gil</option>
+                    </select>
+                   <input type="text" name="matricula" ID="matricula" maxlength="12" required pattern="[0-9]{12)" title="" placeholder="" onBlur="">
+                    <input type="text" name="nome" ID="nome" maxlength="200" required placeholder="" onBlur="">
+                    <select name="tipo-ocorrencia" ID="tipo-ocorrencia" required>
+                        <option value=""></option>
+                        <option value="financeiro">Finançeiro</option>
+                        <option value="elogio">Elogio</option>
+                        <option value="reclamacao">Reclamação</option>
+                    </select>
+                    <select name="status" ID="status" required>
+                        <option value=""></option>
+                        <option value="concluido">Concluído</option>
+                        <option value="em-espera">Em espera</option>
+                        <option value="rejeitado">Rejeitado</option>
+                    </select>
+                    <div class="obs-field">
+                        <textarea name="observacao" id="observacao" required></textarea>
+                    </div>
+                    <br>
+                    <div class="file-upload-container">
+                    <label for="file-upload" class="custom-file-upload">
+                        Selecionar Arquivo
+                    </label>
+                    <input id="file-upload" type="file"/>
+                    </div>
+                    <div class="button-field">
+                        <button class="cancel-button" data-dismiss="modal" aria-hidden="true" onclick="closeModal()">Cancelar</button>
+                        <button class="submit-button" onclick="validaAll()">Salvar</button>
+                    </div>
+                    </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+<footer>
+
+</footer>
+</html>

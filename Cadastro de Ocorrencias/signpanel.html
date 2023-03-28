@@ -1,0 +1,118 @@
+<DOCTYPE! html>
+<html lang="pt" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Sistema de Chamados ESTACIO</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+        window.onload = function() {
+			dado = "tab-all";
+			mudaPag(dado);
+		};
+        </script>
+     </head>
+     <header>
+
+     </header>
+<body bgcolor="#E5E5E5">
+    <div class="body-allign">
+    <div class="body-container">
+        <div class="body-header">
+                <img class="logo" src="images/logo.png">
+                <div class="calendar-info">
+                    <img class="calendar" src="images/calendar.png">
+                    <div class="sistem-date">
+                        <h3>Hoje</h3>
+                        <h2>21 JUN 2021</h2>
+                    </div>
+                </div>
+                <div>
+                    <img class="sinner2" src="images/sinner.png" alt="images/sinner-tik.png">
+                    <img class="gear2" src="images/gear.png">
+                </div>
+        </div>
+    
+    <div class="form-container">    
+        <form name="form-ocorrencia" id="form" class="form-ocorrencia" action="controlpanel.html" method="post">
+            <div class="form-header">
+                <h1>Cadastro de Ocorrências</h1>
+            </div>
+            <br>
+            <div class="form-row">
+            <div class="form-label-container">
+                <h3>Setor da Próxima Etapa:<br><br><br>
+                    <div class="lined-text">
+                    Setor para Redirecionamento: <br><br><br>
+                    </div>
+                    Campus Responsável:<br><br><br>
+                    Matrícula:<br><br><br>
+                    Nome:<br><br><br>
+                    Tipo de Ocorrência:<br><br><br>
+                    Status:<br><br><br>
+                    Observação:<br><br><br><br><br><br><br><br><br><br>
+                    Anexar Arquivo:<br><br><br>
+                </h3>
+            </div>
+            <div class="form-content-container">
+             <select name="Setor da Próxima Etapa" ID="setor-prox-etapa" required>
+				<option value=""></option>
+				<option value="coordenacao">Coordenação</option>
+				<option value="financeiro">Finançeiro</option>
+				<option value="ead">Polo EAD</option>
+			</select>
+            <br><br>
+            <select name="Setor para Redirecionamento" ID="setor-redirec" required>
+				<option value=""></option>
+				<option value="coordenacao">Coordenação</option>
+				<option value="financeiro">Finançeiro</option>
+				<option value="ead">Polo EAD</option>
+			</select>
+            <br><br>
+            <select name="Campus Responsável" ID="campus-resp" required>
+				<option value=""></option>
+                <option value="fratelli-vita">Fratelli Vita</option>
+				<option value="gilberto-gil">Gilberto Gil</option>
+			</select>
+            <br><br>
+           <input type="text" name="Matrícula" ID="matricula" maxlength="12" required pattern="[0-9]{12)" title="" placeholder="" onBlur="">
+            <br><br>
+            <input type="text" name="Nome" ID="nome" maxlength="200" required placeholder="" onBlur="">
+            <br><br>
+            <select name="Tipo de Ocorrência" ID="tipo-ocorrencia" required>
+				<option value=""></option>
+                <option value="financeiro">Finançeiro</option>
+                <option value="elogio">Elogio</option>
+				<option value="reclamacao">Reclamação</option>
+			</select>
+            <br><br>
+            <select name="Status" ID="status" required>
+				<option value=""></option>
+                <option value="concluido">Concluído</option>
+                <option value="em-espera">Em espera</option>
+				<option value="rejeitado">Rejeitado</option>
+			</select>
+            <br><br>
+            <div class="obs-field">
+                <textarea name="Observação" id="observacao" minlength="50" required></textarea>
+            </div>
+            <br>
+            <div class="file-upload-container">
+            <label for="file-upload" class="custom-file-upload">
+                Selecionar Arquivo
+            </label>
+            <input id="file-upload" type="file"/>
+            </div>
+            <br><br>
+            <div class="button-field">
+                <button class="cancel-button" onclick="location.href='controlpanel.html'">Cancelar</button><input class="submit-button" type="submit" value="Salvar" onclick="validaAll()">
+            </div>
+            </div>
+
+        </div>
+        </form>
+    </div>
+    </div> 
+    </div>
+</body>
+</html>
